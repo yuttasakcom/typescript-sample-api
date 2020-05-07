@@ -1,0 +1,28 @@
+{
+  "name": "sample-typescript",
+  "version": "2.0.0",
+  "description": "sample-typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/uuid": "^7.0.3",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.12.2",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.0-alpha.1",
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.8.1",
+    "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "nodemon": "^2.0.3",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
+  }
+}
