@@ -1,4 +1,5 @@
 import { Service } from 'typedi'
+
 import { NotFound } from '../errors/notFound'
 
 export type Todo = {

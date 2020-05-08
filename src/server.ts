@@ -1,13 +1,13 @@
 import koa from 'koa'
+import { Container } from 'typedi'
 import {
   RoutingControllersOptions,
   useKoaServer,
   useContainer,
 } from 'routing-controllers'
-import { errorHandler } from './middleware/errorHandler'
-import { Container } from 'typedi'
 
 import graphql from './graphql'
+import { errorHandler } from './middleware/errorHandler'
 
 useContainer(Container)
 
