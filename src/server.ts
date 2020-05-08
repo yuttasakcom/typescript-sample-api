@@ -8,15 +8,15 @@ export class Server {
   private hostname: string = '0.0.0.0'
 
   constructor() {
-    this.use()
-    this.initRouting()
+    this.useMiddleware()
+    this.setupRouting()
   }
 
-  private use() {
+  private useMiddleware() {
     this.app.use(errorHandler)
   }
 
-  private initRouting() {
+  private setupRouting() {
     const routingControllersOptions: RoutingControllersOptions = {
       defaultErrorHandler: false,
       controllers: [`${__dirname}/**/*.controller.ts`],
