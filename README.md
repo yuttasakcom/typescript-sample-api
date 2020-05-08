@@ -4,6 +4,9 @@
 
 - [Introduce](#Introduce)
 - [Encapsulation](#Encapsulation)
+- [Setup Module](#Setup-Module)
+- [Setup Middleware](#Setup-Middleware)
+- [Setup Graphql](#Setup-Graphql)
 
 ## Introduce
 
@@ -82,4 +85,65 @@ export class Server {
     })
   }
 }
+```
+
+## Setup Module
+
+- create controller
+- create DTO
+- create service
+
+```
+src/todos
+├── todo.controller.ts
+├── todo.dto.ts
+└── todo.service.ts
+```
+
+## Setup Middleware
+
+```
+src/middleware
+└── errorHandler.ts
+```
+
+```typescript
+// file server.ts
+constructor() {
+  this.useMiddleware()
+}
+
+private useMiddleware() {
+  this.app.use(errorHandler)
+}
+```
+
+## Setup GraphQL
+
+- create schema
+- create resolver
+
+```
+src/todos
+├── todo.resolver.ts
+├── todo.schema.ts
+```
+
+```typescript
+import { resolve } from 'path'
+
+import { ApolloServer } from 'apollo-server-koa'
+import { mergeTypes, mergeResolvers, fileLoader } from 'merge-graphql-schemas'
+
+export default new (class Graphql extends ApolloServer {
+  constructor() {
+    const typeDefs = mergeTypes(
+      fileLoader(resolve(__dirname, '**/*.schema.ts'))
+    )
+    const resolvers = mergeResolvers(
+      fileLoader(resolve(__dirname, '**/*.resolver.ts'))
+    )
+    super({ typeDefs, resolvers })
+  }
+})()
 ```
