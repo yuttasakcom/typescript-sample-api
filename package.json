@@ -10,13 +10,17 @@
   "license": "ISC",
   "dependencies": {
     "@types/uuid": "^7.0.3",
+    "apollo-server-koa": "^2.13.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
+    "graphql": "^15.0.0",
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^8.0.0-alpha.1",
+    "merge-graphql-schemas": "^1.7.8",
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.8.1",
+    "typedi": "^0.8.0",
     "uuid": "^8.0.0"
   },
   "devDependencies": {

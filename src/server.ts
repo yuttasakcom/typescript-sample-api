@@ -1,6 +1,15 @@
 import koa from 'koa'
-import { RoutingControllersOptions, useKoaServer } from 'routing-controllers'
+import {
+  RoutingControllersOptions,
+  useKoaServer,
+  useContainer,
+} from 'routing-controllers'
 import { errorHandler } from './middleware/errorHandler'
+import { Container } from 'typedi'
+
+import graphql from './graphql'
+
+useContainer(Container)
 
 export class Server {
   private app: koa = new koa()
@@ -9,11 +18,16 @@ export class Server {
 
   constructor() {
     this.useMiddleware()
+    this.setupGraphQL()
     this.setupRouting()
   }
 
   private useMiddleware() {
     this.app.use(errorHandler)
+  }
+
+  private setupGraphQL() {
+    graphql.applyMiddleware({ app: this.app })
   }
 
   private setupRouting() {
