@@ -130,6 +130,20 @@ src/todos
 ```
 
 ```typescript
+// file server.ts
+import graphql from './graphql'
+...
+constructor() {
+  ...
+  this.setupGraphQL()
+  ...
+}
+...
+private setupGraphQL() {
+  graphql.applyMiddleware({ app: this.app })
+}
+---
+// file graphql.ts
 import { resolve } from 'path'
 
 import { ApolloServer } from 'apollo-server-koa'
