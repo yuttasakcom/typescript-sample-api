@@ -9,6 +9,8 @@
 
 - แนะนำคู่มือ typescript ให้เริ่มอ่านทำความเข้าใจอย่างละเอียดไปทีละหัวข้อ เริ่มตั้งแต่เรื่อง Basic Type `https://www.typescriptlang.org/docs/handbook/basic-types.html`
 - แนะนำ OOP(Object-oriented programming) paradigm ศึกษาทำความเข้าใจ วิธีการ แนวคิด เกี่ยวการเขียนโปรแกรมเชิงวัตถุ `https://en.wikipedia.org/wiki/Object-oriented_programming`
+- typescript awesome `https://github.com/dzharii/awesome-typescript`
+- typescript clean code `https://github.com/labs42io/clean-code-typescript`
 
 ## VS-Code
 
