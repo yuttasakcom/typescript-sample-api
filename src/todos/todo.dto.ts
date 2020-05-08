@@ -6,9 +6,9 @@ export enum TodoStatus {
 }
 export class TodoDto {
   @IsNotEmpty()
-  title!: string
+  title: string
 
   @IsNotEmpty()
   @IsIn([TodoStatus.DONE, TodoStatus.DOING])
-  status!: TodoStatus
+  status: TodoStatus
 }
