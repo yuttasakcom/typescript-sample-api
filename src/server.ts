@@ -29,7 +29,7 @@ export class Server {
   }
 
   private autoLoadRepositories() {
-    autoLoad(resolve(__dirname), 'repository.ts')
+    autoLoad([`${__dirname}/**/*.repository.ts`])
   }
 
   private setupMongo() {
