@@ -1,4 +1,7 @@
+import { resolve } from 'path'
+
 import koa from 'koa'
+import mongoose from 'mongoose'
 import { Container } from 'typedi'
 import {
   RoutingControllersOptions,
@@ -8,6 +11,7 @@ import {
 
 import graphql from './graphql'
 import { errorHandler } from './middleware/errorHandler'
+import { autoLoad } from './utils/autoLoad'
 
 useContainer(Container)
 
@@ -17,9 +21,22 @@ export class Server {
   private hostname: string = '0.0.0.0'
 
   constructor() {
+    this.setupMongo()
     this.useMiddleware()
+    this.autoLoadRepositories()
     this.setupGraphQL()
     this.setupRouting()
+  }
+
+  private autoLoadRepositories() {
+    autoLoad(resolve(__dirname), 'repository.ts')
+  }
+
+  private setupMongo() {
+    mongoose.connect('mongodb://localhost:27017/posts', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
   }
 
   private useMiddleware() {
