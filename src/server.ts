@@ -1,5 +1,3 @@
-import { resolve } from 'path'
-
 import koa from 'koa'
 import mongoose from 'mongoose'
 import { Container } from 'typedi'
