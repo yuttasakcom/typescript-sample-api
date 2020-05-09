@@ -92,12 +92,14 @@ export class Server {
 - create controller
 - create DTO
 - create service
+- create model
 
 ```
-src/todos
-├── todo.controller.ts
-├── todo.dto.ts
-└── todo.service.ts
+src/posts
+├── posts.controller.ts
+├── posts.dto.ts
+├── posts.model.ts
+└── posts.service.ts
 ```
 
 ## Setup Middleware
@@ -124,9 +126,9 @@ private useMiddleware() {
 - create resolver
 
 ```
-src/todos
-├── todo.resolver.ts
-├── todo.schema.ts
+src/posts
+├── posts.resolver.ts
+├── posts.schema.ts
 ```
 
 ```typescript
