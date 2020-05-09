@@ -13,6 +13,7 @@ export async function errorHandler(ctx: Context, next: Function) {
       ctx.status = httpCode
       ctx.body = { message, errors }
     } else {
+      console.log(error)
       const { statusCode, message } = error
       ctx.status = statusCode
       ctx.body = { message }

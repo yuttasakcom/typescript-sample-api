@@ -24,8 +24,8 @@ export class PostController {
     return this.service.find()
   }
 
-  // @Get('/:id')
-  // getById(@Param('id') id: string): Content {
-  //   return this.service.getById(id)
-  // }
+  @Get('/:id')
+  getById(@Param('id') id: string): Promise<PostDoc> {
+    return this.service.getById(id)
+  }
 }
